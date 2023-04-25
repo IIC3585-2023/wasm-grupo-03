@@ -943,6 +943,7 @@ var tempI64;
       ret = onDone(ret);
       return ret;
     }
+
 var wasmImports = {
   "emscripten_memcpy_big": _emscripten_memcpy_big,
   "emscripten_resize_heap": _emscripten_resize_heap
@@ -1004,6 +1005,7 @@ var stackAlloc = function() {
 // === Auto-generated postamble setup entry stuff ===
 
 Module["ccall"] = ccall;
+Module["getValue"] = getValue;
 
 
 var calledRun;

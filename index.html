@@ -4,31 +4,50 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link href="/dist/output.css" rel="stylesheet">
     <title>WASM demo</title>
   </head>
-  <body>
-    <div class="input">
-      <div>
-        <label class="form-label">Value</label>
-        <input type="number" value="15" id="benchmark-value" />
+  <body class="bg-gradient-to-r from-gray-900 to-purple-800 px-32 py-24 flex flex-col gap-3 justify-center">
+    <h1 class="text-6xl font-bold text-gray-100 text-center">
+      Performance
+    </h1>
+    <h2 class="text-2xl font-medium text-gray-100 text-center">
+      algoritmos de asignación de tareas
+    </h2>
+    <div class="flex justify-center w-full mt-10">
+      <div class="flex flex-col">
+        <label class="block text-sm font-medium text-white">Escoge el nivel</label>
+        <select id="level" class="font-medium text-sm mt-2 block w-40 rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-800 ring-1 ring-inset hover:cursor-pointer ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          <option id="easy">Fácil</option>
+          <option id="medium">Medio</option>
+          <option id="hard">Difícil</option>
+        </select>
       </div>
     </div>
-    <div class="benchmark-container">
-      <div class="benchmark js" id="js">
-        <div class="title">JavaScript</div>
-        <div class="value">-</div>
-      </div>
-      <div class="benchmark wasm" id="wasm">
-        <div class="title">WASM</div>
-        <div class="value">-</div>
-      </div>
-      <div class="benchmark wasmworker" id="wasmworker">
-        <div class="title">WASM + WORKER</div>
-        <div class="value">-</div>
-      </div>
+    <div class="flex gap-20 justify-center mt-20">
+      <button class="w-52 h-52 rounded-full bg-yellow-400 hover:shadow-xl hover:shadow-yellow-600" id="run-js">
+        <span class="w-full flex justify-center">
+          <img src="./assets/js-logo.jpg" alt="js-logo" class="w-20 h-20 shadow-lg"/>
+        </span>
+        <!-- Loading Icon -->
+        <span id="js-loading-icon" class="h-5 w-5 animate-spin text-gray-300">
+
+        </span>
+
+        <!-- Time -->
+        <span id="js-time" class="">
+          
+        </span>
+      </button>
+      <button class="w-52 h-52 rounded-full bg-indigo-500 hover:shadow-xl hover:shadow-indigo-600" id="run-wasm">
+        <span class="w-full flex justify-center">
+          <img src="./assets/wasm-logo.jpg" alt="wasm-logo" class="w-20 h-20 shadow-lg"/>
+        </span>
+      </button>
     </div>
   </body>
   <script src="algorithm/c/main.js"></script>
+  <script src="algorithm/js/list_scheduling.js"></script>
+  <script src="algorithm/js/mergesort.js"></script>
   <script src="index.js"></script>
 </html>

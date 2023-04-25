@@ -57,6 +57,7 @@ function merge(arr, l, m, r)
 // right index of the sub-array
 // of arr to be sorted */
 function mergeSort(arr,l, r){
+  // const start = performance.now();
   if(l >= r){
     return;//returns recursively
   }
@@ -64,6 +65,8 @@ function mergeSort(arr,l, r){
   mergeSort(arr,l,m);
   mergeSort(arr,m+1,r);
   merge(arr,l,m,r);
+  // const end = performance.now();
+  // console.log(`Merge Sort took ${(end - start)} milliseconds to sort an array of ${arr.length} elements`);
 }
 
 // code from https://www.geeksforgeeks.org/merge-sort/

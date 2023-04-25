@@ -10,7 +10,7 @@ int main()
 
   FILE *fptr;
 
-  fptr = fopen("./input.txt", "r");
+  fptr = fopen("../../input.txt", "r");
 
   if(fptr == NULL)
   {
