@@ -14,36 +14,87 @@
     <h2 class="text-2xl font-medium text-gray-100 text-center">
       algoritmos de asignación de tareas
     </h2>
-    <div class="flex justify-center w-full mt-10">
+    <div class="flex justify-center gap-10 w-full mt-10">
       <div class="flex flex-col">
         <label class="block text-sm font-medium text-white">Escoge el nivel</label>
         <select id="level" class="font-medium text-sm mt-2 block w-40 rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-800 ring-1 ring-inset hover:cursor-pointer ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
+          <option id="supereasy">Super Fácil</option>
           <option id="easy">Fácil</option>
           <option id="medium">Medio</option>
           <option id="hard">Difícil</option>
         </select>
       </div>
+      <div class="flex flex-col items-center justify-center bg-white p-3 rounded-lg text-purple-800 font-sans">
+        <p class="text-sm">Workers</p>
+        <p class="text-xl font-medium" id="workers">20</p>
+      </div>
+      <div class="flex flex-col items-center justify-center bg-white py-3 px-5 rounded-lg text-purple-800 font-sans">
+        <p class="text-sm">Tasks</p>
+        <p class="text-xl font-medium" id="tasks">100</p>
+      </div>
     </div>
     <div class="flex gap-20 justify-center mt-20">
-      <button class="w-52 h-52 rounded-full bg-yellow-400 hover:shadow-xl hover:shadow-yellow-600" id="run-js">
-        <span class="w-full flex justify-center">
+      <button class="flex flex-col justify-center items-center w-52 h-52 rounded-full bg-yellow-400 hover:shadow-xl hover:shadow-yellow-600" id="run-js">
+        <div class="w-full flex justify-center mb-5">
           <img src="./assets/js-logo.jpg" alt="js-logo" class="w-20 h-20 shadow-lg"/>
-        </span>
-        <!-- Loading Icon -->
-        <span id="js-loading-icon" class="h-5 w-5 animate-spin text-gray-300">
+        </div>
 
-        </span>
+        <!-- Loading Icon -->
+        <div id="js-loading-icon" class="flex w-full justify-center hidden">
+          <span class="block h-5 w-5 animate-spin text-gray-600">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              width="100%"
+              height="100%"
+            >
+              <path
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              />
+            </svg>
+          </span>
+        </div>
 
         <!-- Time -->
-        <span id="js-time" class="">
-          
-        </span>
+        <div id="js-time" class="flex w-full justify-center hidden">
+          <div class="bg-gray-800 text-white text-xl p-3 rounded-lg font-medium">
+            <p></p>
+          </div>
+        </div>
       </button>
-      <button class="w-52 h-52 rounded-full bg-indigo-500 hover:shadow-xl hover:shadow-indigo-600" id="run-wasm">
-        <span class="w-full flex justify-center">
+      <button class="flex flex-col justify-center items-center w-52 h-52 rounded-full bg-indigo-500 hover:shadow-xl hover:shadow-indigo-600" id="run-wasm">
+        <span class="w-full flex justify-center mb-5">
           <img src="./assets/wasm-logo.jpg" alt="wasm-logo" class="w-20 h-20 shadow-lg"/>
         </span>
+
+        <!-- Loading Icon -->
+        <div id="wasm-loading-icon" class="flex w-full justify-center hidden">
+          <span class="block h-5 w-5 animate-spin text-white">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              width="100%"
+              height="100%"
+            >
+              <path
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              />
+            </svg>
+          </span>
+        </div>
+
+        <!-- Time -->
+        <div id="wasm-time" class="flex w-full justify-center hidden">
+          <div class="bg-white text-indigo-700 text-xl p-3 rounded-lg font-medium">
+            <p>7.888 ms</p>
+          </div>
+        </div>
       </button>
+    </div>
+
+    <div id="assignment" class="flex flex-col gap-2 bg-white p-4 rounded-lg mt-80">
     </div>
   </body>
   <script src="algorithm/c/main.js"></script>

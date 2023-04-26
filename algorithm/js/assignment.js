@@ -14,6 +14,4 @@ fs.readFile('./input.txt', (err, inputD) => {
   mergeSort(tasks, 0, tasks.length - 1)
 
   const workersAssigned = listScheduling(tasks, n_workers, n_tasks);
-
-  console.log(workersAssigned)
 })

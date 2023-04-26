@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "mergesort.h"
 
 int findMinimunIndex(int* array, int lenArray)
 {
@@ -20,6 +21,7 @@ int** listScheduling(int* tasks, int n_workers, int n_tasks)
 {
   int* current_time_workers = calloc(n_workers, sizeof(int));
   int** workers = calloc(n_workers, sizeof(int*));
+  mergeSort(tasks, 0, n_tasks - 1);
   for (int i = 0; i < n_workers; i++)
   {
     workers[i] = calloc(n_tasks, sizeof(int));
@@ -35,9 +37,4 @@ int** listScheduling(int* tasks, int n_workers, int n_tasks)
   free(current_time_workers);
 
   return workers;
-}
-
-int sum(int a, int b)
-{
-  return a + b;
 }
